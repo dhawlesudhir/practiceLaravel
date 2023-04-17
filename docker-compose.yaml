@@ -19,6 +19,14 @@ services:
     image: mysql:5.7
     env_file:
       - ./env/mysql.env
+    ports:
+      - "5506:3306"
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - "7098:80"
+    environment:
+      - PMA_HOST=mysql
   composer:
     build:
       context: ./dockerfiles
