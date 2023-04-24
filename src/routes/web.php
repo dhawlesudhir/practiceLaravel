@@ -17,12 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login/{user?}', function ($user=0) {
-   return view('home.login',['user'=>$user]);
+Route::get('/test',function(){
+    return 'jo';
 });
-
-Route::get('/contact',function(){
-    return view('home.contact');
-});
-
-Route::view('/testpage','home.home',['name'=>'xyz']);

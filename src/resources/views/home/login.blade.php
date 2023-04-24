@@ -1,1 +1,0 @@
-<h1>Welcome to login page {{$user}}</h1>
