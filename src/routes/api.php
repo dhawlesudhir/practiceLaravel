@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -14,10 +15,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::resource('products',ProductController::class);
+Route::post('/register',[AuthController::class,'register']);
+Route::post('/login',[AuthController::class,'login']);
+
+// ways to use middleware
+// 1
+Route::middleware('auth:sanctum')->group(function(){
+    Route::get('/products/search/{name}',[ProductController::class,'search']);
+    Route::get('/logout',[AuthController::class,'logout']);
 });
 
-Route::get('/products',[ProductController::class,'index']);
+// 2
+// Route::middleware('auth:sanctum')->get('/pro1',function(){
+//     echo "hishsdh";
+// });
 
-Route::post('/product',[ProductController::class,'store']);
+// 3
+// Route::get('pro2',function(){
+//     echo "pro2";
+// })->middleware('auth:sanctum');

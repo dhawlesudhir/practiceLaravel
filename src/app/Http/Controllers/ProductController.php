@@ -19,6 +19,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate(['name'=>'required','slug'=>'required','price'=>'required']);
+
         return Product::create($request->all());
     }
 
@@ -27,7 +29,8 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $product = Product::find($id);
+        return $product == null ? response('Product Not Found',404) : $product;
     }
 
     /**
@@ -35,7 +38,13 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $product = Product::find($id);
+        if(!isset($product)){
+            return response('Product Not Found',404);
+        }
+        $product->update($request->all());
+        // $product->save();
+        return $product;
     }
 
     /**
@@ -43,6 +52,14 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        return Product::destroy($id);
+    }
+
+     /**
+     * search the specified resource from storage.
+     */
+    public function search(string $name)
+    {
+        return Product::where('name','like',"%".$name."%")->get();
     }
 }

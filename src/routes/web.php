@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test',function(){
-    return 'jo';
-});
+Route::get('/login',function(){
+    return 'login first';
+})->name('login');
