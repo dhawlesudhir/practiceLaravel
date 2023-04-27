@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Customer;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/login',function(){
     return 'login first';
 })->name('login');
+
+Route::get('/customers',function(){
+    return Customer::find(1)->address();
+});
