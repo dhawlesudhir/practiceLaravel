@@ -22,5 +22,8 @@ Route::get('/login',function(){
 })->name('login');
 
 Route::get('/customers',function(){
-    return Customer::find(1)->address();
+    
+    $address =  Customer::find(1)->address;
+    
+    return $address;
 });
