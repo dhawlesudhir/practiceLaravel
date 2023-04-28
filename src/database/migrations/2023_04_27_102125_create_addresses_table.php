@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
-            $table->tinyText('homeNumner')->comment('house number or name');
-            $table->tinyText('apartmentName');
-            $table->tinyText('landMark');
-            $table->tinyText('areaName');
+            $table->tinyText('homeNumber')->comment('house number or name');
+            $table->tinyText('apartmentName')->nullable();;
+            $table->tinyText('landMark')->nullable();
+            $table->tinyText('areaName')->nullable();;
             $table->tinyText('city');
             $table->tinyText('state');
             $table->tinyText('pincode');
-            $table->tinyText('county');
-            $table->tinyText('additionalInformation');
+            $table->tinyText('county')->nullable();;
+            $table->tinyText('additionalInformation')->nullable();;
             $table->foreignIdFor(Customer::class);
             $table->timestamps();
         });

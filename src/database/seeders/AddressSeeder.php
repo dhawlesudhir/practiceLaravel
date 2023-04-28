@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+use App\Models\Address;
 class AddressSeeder extends Seeder
 {
     /**
@@ -12,6 +12,6 @@ class AddressSeeder extends Seeder
      */
     public function run(): void
     {
-        // Customer::factory(100)->create();
+        Address::factory(100)->create();
     }
 }

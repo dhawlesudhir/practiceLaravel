@@ -22,7 +22,6 @@ class CustomerBankAccountFactory extends Factory
             'IFSC_code' => fake()->swiftBicNumber(),
             'accountType' => fake()->creditCardType(),
             'customer_id' => Customer::all()->unique()->random()->id,
-            
         ];
     }
 }

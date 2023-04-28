@@ -28,3 +28,10 @@ Route::get('/customers',function(){
     return $address;
 
 });
+
+Route::get('/createAdmin',function(){
+    // \App\Models\User::factory()->create([
+    //     'name' => 'Test User',
+    //     'email' => 'test@example.com',
+    // ]);
+});
