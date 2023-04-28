@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Customer;
 use App\Models\Address;
+use App\Models\Product;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,4 +30,8 @@ Route::get('/customers',function(){
 
 });
 
+Route::get('/products',function(){
+    $address = Product::all();
 
+ });
+ 
