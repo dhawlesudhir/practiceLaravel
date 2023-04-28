@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Customer;
+use App\Models\Address;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,16 +23,10 @@ Route::get('/login',function(){
 })->name('login');
 
 Route::get('/customers',function(){
+   $address = Customer::has('address','>=',4)->get();
 
-    $address =  Customer::find(1)->bankAccount;
-
-    return $address;
+   return $address;
 
 });
 
-Route::get('/createAdmin',function(){
-    // \App\Models\User::factory()->create([
-    //     'name' => 'Test User',
-    //     'email' => 'test@example.com',
-    // ]);
-});
+

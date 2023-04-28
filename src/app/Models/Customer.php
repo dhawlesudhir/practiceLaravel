@@ -16,7 +16,7 @@ class Customer extends Model
         return $this->hasMany(Address::class);
     }
 
-    public function bankAccount(): HasOne
+    public function bankaccount(): HasOne
     {
         return $this->hasOne(CustomerBankAccount::class);
     }
