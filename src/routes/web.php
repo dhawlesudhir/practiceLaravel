@@ -23,7 +23,7 @@ Route::get('/login',function(){
 
 Route::get('/customers',function(){
 
-    $address =  Customer::find(1)->address;
+    $address =  Customer::find(1)->bankAccount;
 
     return $address;
 

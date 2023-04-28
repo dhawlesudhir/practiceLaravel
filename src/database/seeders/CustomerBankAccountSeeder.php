@@ -1,17 +1,17 @@
 <?php
 
 namespace Database\Seeders;
-
+use App\Models\CustomerBankAccount;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class AddressSeeder extends Seeder
+class CustomerBankAccountSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        // Customer::factory(100)->create();
+        CustomerBankAccount::factory(100)->create();
     }
 }
