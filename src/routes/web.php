@@ -22,10 +22,9 @@ Route::get('/login',function(){
 })->name('login');
 
 Route::get('/customers',function(){
-    
-    
-    $customer =  Customer::find(1);
-    $address = $customer->address;
-    // return $address;
-    return response(['customer' => $customer],200);
+
+    $address =  Customer::find(1)->address;
+
+    return $address;
+
 });
