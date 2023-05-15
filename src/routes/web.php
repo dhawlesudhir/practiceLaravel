@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Customer;
-use App\Models\Address;
-use App\Models\Product;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,20 +16,3 @@ use App\Models\Product;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/login',function(){
-    return 'login first';
-})->name('login');
-
-Route::get('/customers',function(){
-   $address = Customer::has('address','>=',4)->get();
-
-   return $address;
-
-});
-
-Route::get('/products',function(){
-    $address = Product::all();
-
- });
- 
